@@ -1,15 +1,18 @@
 <!DOCTYPE html>
+<!--This view can be used to take a page down gracefully-->
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Down for maintenance</title>
+        <meta charset="utf-8">
+        <title>
+            Uh oh!
+        </title>
     </head>
     <body>
-        <h1>
-            Uh oh, that didn't work...rest assured we are working on it!
-        </h1>
-    <p>
-        brb!
-    </p>
+        <script>
+            window.onload = () => {
+                alert('Page under construction');
+                window.location.replace('/');
+            };
+        </script>
     </body>
 </html>

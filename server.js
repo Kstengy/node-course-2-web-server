@@ -35,6 +35,10 @@ hbs.registerHelper('screamIt', (text) => {
     return text.toUpperCase();
 });
 
+
+/*
+ To take a page down for maintenance simply render the "maintenance" view
+ */
 // Handles GET requests
 app.get('/', (req, res) => {
     res.render('home.hbs', {
@@ -49,10 +53,24 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: "What I'm working on!"
+    })
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to handle request'
     })
+});
+
+//TODO build a links page
+app.get('/links', (req, res) => {
+    // res.render('links', {
+    //     pageTitle: 'Cool links'
+    // });
+    res.render('maintenance')
 });
 
 app.listen(port, () => {
